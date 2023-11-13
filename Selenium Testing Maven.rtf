@@ -1,0 +1,460 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-BoldItalic;\f1\froman\fcharset0 Times-Roman;\f2\froman\fcharset0 Times-Bold;
+\f3\fmodern\fcharset0 Courier;\f4\fnil\fcharset0 Menlo-Regular;\f5\fnil\fcharset0 Menlo-Bold;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue233;\red0\green0\blue0;\red0\green0\blue255;
+\red0\green0\blue0;\red255\green255\blue255;\red64\green11\blue217;\red47\green180\blue29;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c93333;\cssrgb\c0\c0\c0;\cssrgb\c1680\c19835\c100000;
+\csgray\c0;\cssrgb\c100000\c100000\c100000;\cssrgb\c32308\c18668\c88227;\cssrgb\c20238\c73898\c14947;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh15140\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.toolsqa.com/selenium-webdriver/selenium-tutorial/"}}{\fldrslt 
+\f0\i\b\fs24 \cf2 \expnd0\expndtw0\kerning0
+\ul \ulc2 \outl0\strokewidth0 \strokec2 Selenium WebDriver}}
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3  is the most commonly used component of Selenium. WebDriver allows users to write custom code in their language of choice and interact with the browser of their choice, through browser-specific drivers. 
+\f2\b \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0 \cf3 Selenium can be used to automate web-based applications that run on web browsers. However, it cannot automate desktop-based applications.\
+
+\f2\b \
+How to write code:\
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+
+\f1\b0 1.  Create an instance of WebDriver specific to the Browser:\
+\
+\cf4 import org.openqa.selenium.WebDriver;                               \'97 {\field{\*\fldinst{HYPERLINK "https://www.programiz.com/java-programming/packages-import"}}{\fldrslt 
+\f0\i\b \cf2 \ul \ulc2 \strokec2 Java\'a0import statements}}\cf3  allow access to classes/methods that we declare in other packages. \cf4 \
+import org.openqa.selenium.chrome.ChromeDriver;\
+import org.openqa.selenium.chrome.ChromeOptions;\cf3 \
+\
+Create driver object\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf4 WebDriver driver = new ChromeDriver();\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf3 \
+2. Navigate to the desired Web page which needs to be automated:\
+\
+\cf4 driver.get("https://demoqa.com/text-box")\
+
+\f2\b \cf3 \
+
+\f1\b0 3. Locate an HTML element on the Web page: use element locator \
+\
+\cf4 import org.openqa.selenium.By; \
+import org.openqa.selenium.WebElement; \
+\
+WebElement usernameElement = driver.findElement(By.id("userName"));\cf3 \
+\
+4.      Perform an action on an HTML element:\
+\
+\cf4 usernameElement.sendKeys("Ravinder Singh");  \cf3    \'97 enter data in the field\
+\
+5.      Run tests and record test results using a test framework.\
+\
+\
+
+\f2\b \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+Maven
+\f1\b0  is a robust build automation tool that is commonly used to handle dependencies and build processes in Java applications. Maven makes it simple to manage project dependencies, compile, test, and package your application, and automate the entire build process.\
+\
+
+\f2\b Tools Required for Setup:\
+\
+
+\f1\b0 1. JDK1.8\
+2. IntelliJ IDEA IDE\
+3. Maven\
+\
+
+\f2\b Process of Testing with Maven:\
+
+\f1\b0 \
+1. Start a new Maven project \uc0\u8722  Using the Maven archetype, establish a new project structure with all of the required directories and files.\
+2. Add Selenium and WebDriver dependencies \uc0\u8722  Using the pom.xml file, Maven can automatically download and manage the required dependencies, including Selenium and WebDriver.\
+3. Setup Selenium tests \uc0\u8722  Write Selenium tests using a test framework such as TestNG or JUnit and configure them to run throughout the Maven build cycle.\
+4. Run tests with Maven \uc0\u8722  To build and execute tests, use the "mvn test" command. Maven can generate test reports that include test results and coverage information.\
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 A Maven project's root directory contains the 
+\f2\b pom.xml 
+\f1\b0 file, which serves as the project's heart. This file provides information on the project's settings, such as dependencies, build profiles, and plugins. \
+Dependency it will contain e.g. selenium web driver and Browser driver and TestNG\
+\
+The test code for the project is placed in the src/test/java directory, and the test resources are stored in the src/test/resources directory. \
+\
+
+\f2\b Adding Selenium Dependencies in Maven:\
+
+\f1\b0 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf3 To add Selenium dependencies in Maven, edit your project's pom.xml file. To begin, open your project's pom.xml file and navigate to the dependencies section. Add the following dependencies next \uc0\u8722 \
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf4 <dependency>\
+   <groupId>org.seleniumhq.selenium</groupId>\
+   <artifactId>selenium-java</artifactId>\
+   <version>3.141.59</version>\
+</dependency>\
+<dependency>\
+   <groupId>org.seleniumhq.selenium</groupId>\
+   <artifactId>selenium-chrome-driver</artifactId>\
+   <version>3.141.59</version>\
+</dependency>\cf3 \
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf3 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\pard\pardeftab720\partightenfactor0
+\cf3 When you've added these dependencies to your pom.xml file, save it and execute the Maven build command to download and install them.\
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf3 To write Selenium tests using Maven, you must first configure your project with the necessary dependencies. This is accomplished by include the Selenium Java dependency and the 
+\f2\b Maven Surefire plugin
+\f1\b0  in your pom.xml file.\
+Then, create a test class and add the annotations required to execute the test. To automate browser operations, use the 
+\f2\b @Test annotation
+\f1\b0  to mark a method as a test case and add the Selenium WebDriver instance. \
+You may use the "
+\f2\b mvn test
+\f1\b0 " command at the terminal to run your Selenium tests with Maven. Maven will automatically download and run the required dependencies.\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf3 \
+TestNG testing framework:
+\f1\b0 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+1. Annotations help us organize the tests easily.\
+2. Flexible test configuration.\
+3. Test cases can be grouped more easily.\
+4. Parallelization of tests can be achieved using TestNG.\
+5. Support for data-driven testing.\
+6. Inbuilt reporting.\
+\
+
+\f2\b Annotations in TestNG:\
+
+\f1\b0 e.g.\
+@BeforeSuite 
+\f2\b    
+\f1\b0 The annotated method will be run only once before all the tests in this suite have run.\
+@AfterSuite      The annotated method will be run only once after all the tests in this suite have run.\
+@BeforeTest     The annotated method will be run before any test method belonging to the classes inside the <test> tag is run.\
+@DataProvider   Marks a method as supplying data for a test method. The annotated method must return an Object[ ][ ] where each Object[ ] can be assigned the parameter list of the test method. The @Test method that wants to receive data from this DataProvider needs to use a dataProvider name equals to the name of this annotation.\
+@Parameters     Describes how to pass parameters to a @Test method.\
+@Test                Marks a class or a method as part of the test.\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 TestNG.xml:
+\f1\b0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 TestNG.xml
+\f2\b  
+\f1\b0 file is a configuration file that helps in organizing our tests. It allows testers to create and handle multiple test classes, define test suites and tests.\
+It has different types of assertions that help in validating the expected results with the actual results.\
+\
+#1) A Suite is represented by one XML file. It can contain one or more tests and is defined by the <suite> tag.\
+Example: <suite name=\'94Testing Google Apps\'94>\
+\
+#2) A Test is represented by <test> and can contain one or more TestNG classes.\
+Example: <test name=\'94Regression\'94>\
+\
+#3) A Class is a Java class that contains TestNG annotations. Here it is represented by the <class> tag and can contain one or more test methods.\
+<classes> \
+<class name="Googletest.GmailTest"/>\
+ <class name="Googletest.MapsTest"/> \
+<class name="Googletest.ImagesTest"/>\
+ </classes>\
+\
+#4) A Test method is a Java method annotated by @Test methods in the source file.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3 \cf4 public
+\f1  
+\f3 class
+\f1  
+\f3 GmailTest \{
+\f1 \
+
+\f3 @Test
+\f1 \
+
+\f3 public
+\f1  
+\f3 void
+\f1  
+\f3 LoginTest()
+\f1 \
+
+\f3 \{
+\f1 \
+
+\f3 System.out.println("Successfully Logged In");
+\f1 \
+
+\f3 \}
+\f1 \
+
+\f3 @Test
+\f1 \
+
+\f3 public
+\f1  
+\f3 void
+\f1  
+\f3 LogoutTest()
+\f1 \
+
+\f3 \{
+\f1 \
+
+\f3 System.out.println("Successfully Logged Out");
+\f1 \
+
+\f3 \}
+\f1 \
+
+\f3 \}
+\f1 \cf3 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\
+Example \
+\
+\cf4 <suite name="Practice Suite">\
+  <test name="Test Basics 1">\
+      <parameter name="emailid" value="tester456@gmail.com"/>\
+      <parameter name="password" value="test@123"/>\
+      <classes>\
+      <class name="practiceTests.testParameters"/>\
+      </classes>\
+  </test> <!-- Test --> \
+   \
+  <test name="Test Basics 2">    \
+    <parameter name="emailid" value="tester789@gmail.com"/>\
+    <classes>\
+       <class name="practiceTests.testOptional"/>\
+    </classes>\
+     \
+  </test> <!-- Test -->\
+</suite> <!-- Suite -->\
+Sample TestNG.xml file\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 To generate reports with Maven, add the appropriate plugins to your project's pom.xml file. Maven provides a variety of report-generation plugins, including Surefire and Failsafe for test results, Checkstyle and PMD for code quality, and Javadoc for API documentation.\
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b\fs36 \cf3 Create Maven Project in Intelli J IDE:\
+
+\f1\b0\fs24 \
+1. Go to File | New | Project.\
+2.  From the JDK list, select the JDK that you want to use in your project.\
+3. Select Java and Maven\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f4\fs22 \cf4 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 Kashifs-MacBook-Pro:Selenium_Test1 kashifzeeshan$ ls -lrt\
+total 8\
+drwxr-xr-x  4 kashifzeeshan  staff  128 Sep 26 12:11 src\
+-rw-r--r--  1 kashifzeeshan  staff  653 Sep 26 12:11 pom.xml\
+Kashifs-MacBook-Pro:Selenium_Test1 kashifzeeshan$ \cf5 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec3 \
+\
+Open pom.xml and add following dependencies.      Refer to https://mvnrepository.com/artifact/org.seleniumhq.selenium\
+\
+to get \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 dependencies\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 , search and select it and then click on the available version, the dependency xml format will be displayed.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f3\fs26 \cf4 \cb6 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 <?xml version="1.0" encoding="UTF-8"?>\
+<project xmlns="http://maven.apache.org/POM/4.0.0"\
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"\
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">\
+    <modelVersion>4.0.0</modelVersion>\
+\
+    <groupId>org.example</groupId>\
+    <artifactId>Selenium_Test1</artifactId>\
+    <version>1.0-SNAPSHOT</version>\
+\
+    <properties>\
+        <suite_xml_file>testng.xml</suite_xml_file>\
+        <maven.compiler.source>8</maven.compiler.source>\
+        <maven.compiler.target>8</maven.compiler.target>\
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\
+    </properties>\
+    <dependencies>\
+        <dependency>\
+            <groupId>org.seleniumhq.selenium</groupId>\
+            <artifactId>selenium-server</artifactId>\
+            <version>3.141.59</version>\
+        </dependency>\
+        <dependency>\
+            <groupId>org.testng</groupId>\
+            <artifactId>testng</artifactId>\
+            <version>6.14.3</version>\
+        </dependency>\
+    </dependencies>\
+\
+    <build>\
+        <plugins>\
+\
+            <plugin>\
+                <groupId>org.apache.maven.plugins</groupId>\
+                <artifactId>maven-surefire-plugin</artifactId>\
+                <version>3.0.0-M4</version>\
+                <configuration>\
+                    <suiteXmlFiles>\
+                        <suiteXmlFile>src/test/java/resources/$\{suite_xml_file\}</suiteXmlFile>\
+                    </suiteXmlFiles>\
+                </configuration>\
+            </plugin>\
+        </plugins>\
+    </build>\
+</project>\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\
+\cf4 \cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 The Surefire Plugin is used during the test phase of the build lifecycle to execute the unit tests of an application. It generates reports in two different file formats: Plain text files ( *. txt ) XML files\
+\
+\
+\
+\
+\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf3 If you want to 
+\f2\b only
+\f1\b0  download dependencies without doing anything else, then it's:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f4\fs22 \cf4 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 Kashifs-MacBook-Pro:Selenium_Test1 kashifzeeshan$ /Users/kashifzeeshan/apache-maven-3.9.4/bin/mvn dependency:resolve\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec3 \'85.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f4\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 [
+\f5\b \cf7 INFO
+\f4\b0 \cf5 ] \
+[
+\f5\b \cf7 INFO
+\f4\b0 \cf5 ] 
+\f5\b ------------------------------------------------------------------------
+\f4\b0 \
+[
+\f5\b \cf7 INFO
+\f4\b0 \cf5 ] 
+\f5\b \cf8 BUILD SUCCESS
+\f4\b0 \cf5 \
+[
+\f5\b \cf7 INFO
+\f4\b0 \cf5 ] 
+\f5\b ------------------------------------------------------------------------
+\f4\b0 \
+[
+\f5\b \cf7 INFO
+\f4\b0 \cf5 ] Total time:  16.555 s\
+[
+\f5\b \cf7 INFO
+\f4\b0 \cf5 ] Finished at: 2023-09-26T12:35:17+05:00\
+[
+\f5\b \cf7 INFO
+\f4\b0 \cf5 ] 
+\f5\b ------------------------------------------------------------------------
+\f4\b0 \
+Kashifs-MacBook-Pro:Selenium_Test1 kashifzeeshan$ \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec3 \
+\
+IMPORTANT:\
+Create folders in src/test/java which are resources/seleniumDrivers\
+Download the Chrome driver, extract it, rename it and add \'93_mac\'94 at the end and copy it in the resources folder. If driver is for windows then add _win.\
+\
+place the test.ng file in the Resource folder.\
+\cf4 \cb6 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f3\fs26 \cf4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 <?xml version="1.0" encoding="UTF-8"?>\
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">\
+<suite name="Suite" parallel="tests" thread-count="1">\
+	<test verbose="2" name="Kashif-Test">\
+		<parameter name="executionType" value="node1"/>\
+		<classes>\
+			<class name="kashif_test" />\
+		</classes>\
+	</test>\
+</suite>\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf4 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 \
+\cf3 \cb1 \
+Create a New Java Class for the test cases under test/java.\
+\
+\
+\
+\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f4\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 To Run Test cases, setup java home\
+\
+Kashifs-MacBook-Pro:seleniumk kashifzeeshan$ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_361.jdk/Contents/Home/\
+
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec3 \
+Execute following command to run the tests.\
+\
+
+\f4\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 Kashifs-MacBook-Pro:seleniumk kashifzeeshan$ /Users/kashifzeeshan/apache-maven-3.9.4/bin/mvn test\
+
+\f1\fs24 \cf3 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec3 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\
+\
+}
